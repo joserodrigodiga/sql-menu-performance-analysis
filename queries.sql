@@ -7,7 +7,7 @@
 SELECT category,
        SUM(total) AS revenue
 FROM sales
-WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
+WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
 GROUP BY category
 ORDER BY revenue DESC
 ;
@@ -16,16 +16,16 @@ ORDER BY revenue DESC
 SELECT item,
        SUM(quantity) AS total_units
 FROM sales
-WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
+WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
 GROUP BY item
 ORDER BY total_units DESC
 ;
 
 -- What are the total sales per month?
-SELECT STRFTIME(‘%Y-%m’,date) AS month,
+SELECT STRFTIME('%Y-%m',date) AS month,
        SUM(total) AS revenue
 FROM sales
-WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
+WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
 GROUP BY month
 ORDER BY month ASC
 ;
@@ -33,7 +33,7 @@ ORDER BY month ASC
 -- How many open days are in the window (Sep 1, 2025 to Sep 30, 2026)?
 SELECT COUNT(*) AS open_days
 FROM calendar
-WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
+WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
 ;
 
 -- What is the average daily units per item?
@@ -42,9 +42,9 @@ SELECT item,
        (SELECT COUNT(*) 
          FROM calendar 
          WHERE is_open = 1
-           AND (date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’)), 2) AS avg_units
+           AND (date BETWEEN '2025-09-01' AND '2026-09-30')), 2) AS avg_units
 FROM sales
-WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
+WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
 GROUP BY item
 ORDER BY avg_units DESC
 ;
@@ -55,9 +55,9 @@ SELECT item,
        (SELECT COUNT(*)
          FROM calendar
          WHERE is_open = 1
-           AND (date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’)), 2) AS consistency_pct
+           AND (date BETWEEN '2025-09-01' AND '2026-09-30')), 2) AS consistency_pct
 FROM sales
-WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
+WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
 GROUP BY item
 ORDER BY consistency_pct DESC
 ;
@@ -68,7 +68,7 @@ FROM calendar AS cal
 LEFT JOIN sales
   ON cal.date = sales.date
 WHERE cal.is_open = 1
-  AND (cal.date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’)
+  AND (cal.date BETWEEN '2025-09-01' AND '2026-09-30')
   And sales.date IS NULL
 ;
 
@@ -77,34 +77,34 @@ WITH
   units_per_item AS (
     SELECT item,
            SUM(CASE 
-             WHEN date BETWEEN ‘2026-04-01’ AND ‘2026-06-30’
+             WHEN date BETWEEN '2026-04-01' AND '2026-06-30'
              THEN quantity
              ELSE 0 
            END) AS prior_units,
            SUM(CASE 
-             WHEN date BETWEEN ‘2026-07-01’ AND ‘2026-09-30’
+             WHEN date BETWEEN '2026-07-01' AND '2026-09-30'
              THEN quantity
              ELSE 0
            END) AS recent_units
     FROM sales
-    WHERE date BETWEEN ‘2026-04-01’ AND ‘2026-09-30’
+    WHERE date BETWEEN '2026-04-01' AND '2026-09-30'
     GROUP BY item
 ),
   open_days AS (
     SELECT 
       SUM(CASE
-        WHEN date BETWEEN ‘2026-04-01’ AND ‘2026-06-30’
+        WHEN date BETWEEN '2026-04-01' AND '2026-06-30'
         THEN 1
         ELSE 0
       END) AS prior_days,
       SUM(CASE
-        WHEN date BETWEEN ‘2026-07-01’ AND ‘2026-09-30’
+        WHEN date BETWEEN '2026-07-01' AND '2026-09-30'
         THEN 1
         ELSE 0
       END) AS recent_days
     FROM calendar
     WHERE is_open = 1
-      AND (date BETWEEN ‘2026-04-01’ AND ‘2026-09-30’)
+      AND (date BETWEEN '2026-04-01' AND '2026-09-30')
 )
 SELECT item,
        ROUND((((upi.recent_units * 1.0 / op.recent_days) /
@@ -119,18 +119,18 @@ WITH
   units_qty AS (
     SELECT
       SUM(CASE
-        WHEN category = ‘Sandwich-Solo’
+        WHEN category = 'Sandwich-Solo'
         THEN quantity
         ELSE 0
       END) AS solo_units,
       SUM(CASE 
-        WHEN category = ‘Sandwich-Combo’
+        WHEN category = 'Sandwich-Combo'
         THEN quantity
         ELSE 0 
       END) AS combo_units
     FROM sales
-    WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
-      AND category LIKE ‘Sandwich%’
+    WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
+      AND category LIKE 'Sandwich%'
 )
 SELECT ROUND(((combo_units * 1.0 /
        (solo_units + combo_units)) * 100), 2) AS share_pct
@@ -143,18 +143,18 @@ WITH
     SELECT item,
            SUM(quantity) AS total_units
     FROM sales
-    WHERE date BETWEEN ‘2025-09-01’ AND ‘2026-09-30’
-      AND category LIKE ‘RiceTopper%’
+    WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
+      AND category LIKE 'RiceTopper%'
     GROUP BY item
 ),
   compare AS (
     SELECT 
       SUM(CASE 
-        WHEN item = ‘RT5’
+        WHEN item = 'RT5'
         THEN total_units
       END) AS rt5_units,
       AVG(CASE 
-        WHEN item <> ‘RT5’
+        WHEN item <> 'RT5'
         THEN total_units 
       END) AS solo_avg
     FROM units
