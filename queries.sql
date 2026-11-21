@@ -1,3 +1,8 @@
+--=====================================================
+-- Menu Performance Analysis: SQL Questions
+-- Windows: 2025-09-01 to 2026-09-30
+--=====================================================
+
 -- What are the total sales per category?
 SELECT category,
        SUM(total) AS revenue
