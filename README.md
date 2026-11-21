@@ -54,7 +54,11 @@ Combos made up 58.28% of sandwich units, so customers choose the combo more ofte
 ![Combo vs. solo](combo-vs-solo.jpg)
 
 ## Limitations
-- 
+- Items were ranked by sales performance, not profit.
+- Shorter rice topper history: Rice toppers launched in September 2025, so they have less history than sandwiches. Their early trend may include launch ramp-up.
+- Franchised Business influence: The franchised business sales may affect KSimple items sales (for example, add-on purchases). This could not be measured.
+- Results are candidates for the 2027 menu. Ingredient availability, prep time, and owner feedback also matter
+- Figures are scaled for confidentiality.
 
 ## Files
 - `create-table.sql`: create and insert queries
