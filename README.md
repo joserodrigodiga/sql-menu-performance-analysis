@@ -13,11 +13,19 @@ SQL (SQLite)
 - `calendar`: open days (Mon to Sat, closures removed)
 
 ## Queries and Results
+
 | # | Question | Result |
 |---|----------|--------|
-| 1 | Total sales per category | [one-line result] |
-| 2 | Top items by units | [one-line result] |
-(continue to 10)
+| 1 | What are the total sales per category? | [one-line result] |
+| 2 | Which items sold the most units? | [one-line result] |
+| 3 | What are the total sales per month? | [one-line result] |
+| 4 | How many open days are in the window? | [one-line result] |
+| 5 | What is the average daily units per item? | [one-line result] |
+| 6 | How many days did each item have sales (consistency)? | [one-line result] |
+| 7 | How many open days had zero sales? | [one-line result] |
+| 8 | Which items are growing or declining (Jul to Sep 2026 vs. Apr to Jun 2026)? | [one-line result] |
+| 9 | Do customers choose the combo (sandwich w/ fries) over the solo sandwich? | [one-line result] |
+| 10 | How does RT5(Overload) compare with the average of RT1 to RT4? | [one-line result] |
 
 ## Excel vs. SQL Check
 
@@ -33,7 +41,7 @@ I compared my SQL results with the Excel Item Summary. The numbers match, which 
 
 ## Highlights
 
-### 1. Trend: which items are growing?
+### 1. Trend: Which items are growing?
 Jul to Sep 2026 vs. Apr to Jun 2026, based on average daily units. S1 (+90.2%), S3 (+77.4%) and S2 (+49.3%) grew the most. RT3 (-32.1%) and RT4 (-25.4%) declined the most.
 
 ![Trend query](trend-query.jpg)
