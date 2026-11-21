@@ -1,6 +1,6 @@
 # SQL Menu Performance Analysis
 
-**Question:** Which KSimple items should join the 2027 menu?
+**Question:** Which items should be added to the 2027 new store menu?
 
 **Data note:** Figures are scaled to protect the owner's financial information. Rankings, trends and shares reflect the real patterns.
 
