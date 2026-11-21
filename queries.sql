@@ -108,7 +108,7 @@ WITH
 )
 SELECT item,
        ROUND((((upi.recent_units * 1.0 / op.recent_days) /
-       (NULLIF(upi.prior_units, 0) * 1.0 / op.prior_days)) – 1) * 100, 1) AS trend_pct
+       (NULLIF(upi.prior_units, 0) * 1.0 / op.prior_days)) - 1) * 100, 1) AS trend_pct
 FROM units_per_item AS upi
 CROSS JOIN open_days AS op
 ORDER BY trend_pct DESC
@@ -159,6 +159,6 @@ WITH
       END) AS solo_avg
     FROM units
 )
-SELECT ROUND((rt5_units * 1.0 / solo_avg – 1) * 100, 1) AS pct_share
+SELECT ROUND((rt5_units * 1.0 / solo_avg - 1) * 100, 1) AS pct_share
 FROM compare
 ;
