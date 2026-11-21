@@ -46,7 +46,7 @@ Jul to Sep 2026 vs. Apr to Jun 2026, based on average daily units. S1 (+90.2%), 
 ### 3. Overload value: RT5 vs. RT1 to RT4
 RT5 sold about 202% more units than the average of RT1 to RT4, which makes it the strongest rice topper candidate.
 
-![RT5 overload](rt5-overload.jpg)
+![RT5 overload](overload.jpg)
 
 ### 4. Combo vs. solo sandwiches
 Combos made up 58.28% of sandwich units, so customers choose the combo more often than the solo.
