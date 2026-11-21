@@ -156,9 +156,9 @@ WITH
       AVG(CASE 
         WHEN item <> 'RT5'
         THEN total_units 
-      END) AS solo_avg
+      END) AS solos_avg
     FROM units
 )
-SELECT ROUND((rt5_units * 1.0 / solo_avg - 1) * 100, 1) AS pct_share
+SELECT ROUND((rt5_units * 1.0 / solos_avg - 1) * 100, 1) AS pct_diff
 FROM compare
 ;
