@@ -1,4 +1,4 @@
-# SQL Menu Performance Analysis
+# SQL Menu Questions
 
 **Question:** Which items should be added to the 2027 new store menu?
 
