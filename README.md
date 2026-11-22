@@ -44,7 +44,7 @@ I compared my SQL results with the Excel Item Summary. The numbers match, which 
 ### 1. Trend: Which items are growing?
 Jul to Sep 2026 vs. Apr to Jun 2026, based on average daily units. S1 (+90.2%), S3 (+77.4%) and S2 (+49.3%) grew the most. RT3 (-32.1%) and RT4 (-25.4%) declined the most.
 
-![Trend query](trend-query.jpg)
+![Trend query](trend.jpg)
 
 ### 2. Zero-sale days
 37 open days had no sales between Sep 1, 2025 and Sep 30, 2026. This uses a LEFT JOIN between the calendar and sales tables.
