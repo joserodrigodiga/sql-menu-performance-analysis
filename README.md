@@ -16,12 +16,12 @@ SQL (SQLite)
 
 | # | Question | Result |
 |---|----------|--------|
-| 1 | What are the total sales per category? | [one-line result] |
-| 2 | Which items sold the most units? | [one-line result] |
-| 3 | What are the total sales per month? | [one-line result] |
-| 4 | How many open days are in the window? | [one-line result] |
-| 5 | What is the average daily units per item? | [one-line result] |
-| 6 | How many days did each item have sales (consistency)? | [one-line result] |
+| 1 | What are the total sales per category? | Sandwich-Combo led with 136,995 (39% of sales). RiceTopper-Mix was second at 84,185. |
+| 2 | Which items sold the most units? | S4 sold the most (1,384 units), then RT5 (1,096) and S2 (1,063). RT2 sold the least (108). |
+| 3 | What are the total sales per month? | Sales peaked in Jul 2026 (39,535) and Jan 2026 (39,410). Sep 2025 was the lowest (16,165). |
+| 4 | How many open days are in the window? | 339 open days (Sep 1, 2025 to Sep 30, 2026). |
+| 5 | What is the average daily units per item? | S4 led at 4.08 units per open day, then RT5 (3.23) and S2 (3.14). RT2 was lowest (0.32). |
+| 6 | What share of open days did each item have sales (consistency)? | S4 sold on 55.16% of open days. S2 and RT5 followed at 42.48%. RT2 was lowest at 6.78%. |
 | 7 | How many open days had zero sales? | 37 days |
 | 8 | Which items are growing or declining (Jul to Sep 2026 vs. Apr to Jun 2026)? | S1 grew the most (+90.2%). RT3 declined the most (-32.1%). |
 | 9 | Do customers choose the combo (sandwich w/ fries) over the solo sandwich? | Combos made up 58.28% of sandwich units. |
@@ -29,15 +29,15 @@ SQL (SQLite)
 
 ## Excel vs. SQL Check
 
-I compared my SQL results with the Excel Item Summary. The numbers match, which confirms both are correct.
+I compared my SQL results with the Excel calculations. The numbers match, which confirms both are correct.
 
 | Metric | Excel | SQL | Match |
 |--------|-------|-----|-------|
-| Units per item | [value] | [value] | Yes |
-| Average daily units per item | [value] | [value] | Yes |
-| Days with sales per item | [value] | [value] | Yes |
-| Zero-sale days | [value] | 37 | Yes |
-| Trend (S1) | [value] | +90.2% | Yes |
+| Total sales | 349,490 | 349,490 (sum of Q1) | Yes |
+| Units sold | 5,753 | 5,753 (sum of Q2) | Yes |
+| Average daily sales | 1,030.94 | 349,490 ÷ 339 = 1,030.94 | Yes |
+| Zero-sale days % | 10.9% | 37 ÷ 339 = 10.9% | Yes |
+| Average daily units (S4) | 4.08 | 4.08 | Yes |
 
 ## Highlights
 
