@@ -22,10 +22,10 @@ SQL (SQLite)
 | 4 | How many open days are in the window? | [one-line result] |
 | 5 | What is the average daily units per item? | [one-line result] |
 | 6 | How many days did each item have sales (consistency)? | [one-line result] |
-| 7 | How many open days had zero sales? | [one-line result] |
-| 8 | Which items are growing or declining (Jul to Sep 2026 vs. Apr to Jun 2026)? | [one-line result] |
-| 9 | Do customers choose the combo (sandwich w/ fries) over the solo sandwich? | [one-line result] |
-| 10 | How does RT5(Overload) compare with the average of RT1 to RT4? | [one-line result] |
+| 7 | How many open days had zero sales? | 37 days |
+| 8 | Which items are growing or declining (Jul to Sep 2026 vs. Apr to Jun 2026)? | S1 grew the most (+90.2%). RT3 declined the most (-32.1%). |
+| 9 | Do customers choose the combo (sandwich w/ fries) over the solo sandwich? | Combos made up 58.28% of sandwich units. |
+| 10 | How does RT5(Overload) compare with the average of RT1 to RT4? | RT5 sold about 202% more units. |
 
 ## Excel vs. SQL Check
 
