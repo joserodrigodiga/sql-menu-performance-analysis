@@ -69,5 +69,5 @@ Combos made up 58.28% of sandwich units, so customers choose the combo more ofte
 - Figures are scaled for confidentiality.
 
 ## Files
-- `create-table.sql`: create and insert queries
+- `create-tables.sql`: create and insert queries
 - `queries.sql`: question queries
