@@ -51,11 +51,11 @@ ORDER BY avg_units DESC
 
 -- How many days did each item have sales (consistency)?
 SELECT item,
-       ROUND(COUNT(DISTINCT date) * 1.0 /
+       ROUND((COUNT(DISTINCT date) * 1.0 /
        (SELECT COUNT(*)
          FROM calendar
          WHERE is_open = 1
-           AND (date BETWEEN '2025-09-01' AND '2026-09-30')), 2) AS consistency_pct
+           AND (date BETWEEN '2025-09-01' AND '2026-09-30'))) * 100, 2) AS consistency_pct
 FROM sales
 WHERE date BETWEEN '2025-09-01' AND '2026-09-30'
 GROUP BY item
