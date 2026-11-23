@@ -1,4 +1,4 @@
-> **Part 2 of 3** in the Menu Performance Analysis for 2027 Store Planning. See also: [Part 1: Excel Menu Performance Analysis](https://github.com/joserodrigodiga/excel-mune-performance-analysis) | Part 3: Looker Studio dashboard (in progress)
+> **Part 2 of 3** in the Menu Performance Analysis for 2027 Store Planning. See also: [Part 1: Excel Menu Performance Analysis](https://github.com/joserodrigodiga/excel-menu-performance-analysis) | Part 3: Looker Studio dashboard (in progress)
 
 # SQL Menu Questions
 
